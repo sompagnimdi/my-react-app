@@ -1,11 +1,22 @@
 function ListGroup() {
-  const items = ["Ouagadougou", "Koudougou", "Bobo Dioulasso", "Fada", "Dori"];
+  let items = ["Ouagadougou", "Koudougou", "Bobo Dioulasso", "Fada", "Dori"];
+
+  const getMessage = () => {
+    return;
+  };
   return (
     <>
       <h1>List</h1>
+      {items.length === 0 && <p>No item found</p>}
       <ul className="list-group">
         {items.map((item) => (
-          <li>{item}</li>
+          <li
+            className="list-group-item"
+            key={item}
+            onClick={() => console.log("Clicked")}
+          >
+            {item}
+          </li>
         ))}
       </ul>
     </>
