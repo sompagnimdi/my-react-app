@@ -1,11 +1,17 @@
 import Button from "./components/Button";
 
-const App = () => {
+function App() {
+  const [alertVisible, setAlertVisibility] = useState(false);
   return (
     <div>
-      <Button>My Button</Button>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisibility(false)}>My alert</Alert>
+      )}
+      <Button color="primary" onClick={() => setAlertVisibility(true)}>
+        My Button
+      </Button>
     </div>
   );
-};
+}
 
 export default App;
